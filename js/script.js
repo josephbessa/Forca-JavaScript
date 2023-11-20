@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
     exibirPalavra();
 });
 
+// Função para exibir a palavra
 function exibirPalavra() {
     let exibicao = "";
     for (let letra of palavraOculta) {
@@ -38,14 +39,17 @@ function exibirPalavra() {
     return exibicao;
 }
 
+// Função que vai verificar a letra
 function verificarLetra(letra) {
     return palavraOculta.includes(letra);
 }
 
+// Função para atualizar as letras advinhadas
 function atualizarLetrasAdivinhadas() {
     document.getElementById("letras-adivinhadas").innerHTML = "Letras adivinhadas: " + letrasAdivinhadas.join(", ");
 }
 
+// função para advinhar a letra
 function adivinharLetra() {
     let entradaLetra = document.getElementById("entrada-letra");
     let letraAdivinhada = entradaLetra.value.toLowerCase();
@@ -75,6 +79,7 @@ function adivinharLetra() {
     }
 }
 
+// Função vencedor ou perdedor
 function verificarStatusJogo(exibicaoAtual) {
     if (tentativasRestantes === 0) {
         alert("Você perdeu! A palavra era: " + palavraOculta);
@@ -85,6 +90,7 @@ function verificarStatusJogo(exibicaoAtual) {
     }
 }
 
+// Função para reiniciar a partida
 function reiniciarJogo() {
     const novoTema = temasArray[Math.floor(Math.random() * temasArray.length)];
     
